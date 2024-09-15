@@ -1,8 +1,7 @@
 const express = require('express');
-
 const app = express();
-
 const messages = require('./messages');
+const bodyParser = require('body-parser');
 
 app.get('/', (req, res) => {
  res.send(messages.home);
@@ -20,3 +19,11 @@ app.listen(port, () => {
 });
 
 app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/submit', (req, res) => {
+  const book = req.body.book;
+  console.log(`Book submitted: ${book}`);
+  res.send(`Book submitted: ${book}`);
+});

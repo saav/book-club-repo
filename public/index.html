@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Club</title>
   <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
+
 <body>
-  <h1>Welcome to our Book Club!>/h1>
+  <h1>Welcome to our Book Club!</h1>
+
+  <form action="/submit" method="post">
+    <input type="text" name="book" placeholder="Enter a book title" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
+
 </html>
